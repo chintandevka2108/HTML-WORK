@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jqery events</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .btn {
+            height: 80px;
+            width: 180px;
+            font-size: 1.5rem;
+            margin-top: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            border: 2px solid black;
+            background-color: aqua;
+            /* background-image: linear-gradient(#e66465, #9198e5); */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn" id="btn-1"> btn-1 </div>
+    <div class="btn" id="btn-2"> btn-2 </div>
+    <div class="btn" id="btn-3"> btn-3 </div>
+    <div class="btn" id="btn-4"> btn-4 </div>
+</body>
+
+</html>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').click(function () {
+            $(this).css("background-image", "linear-gradient(#e66465, #9198e5)");
+            $('.box').click(function () {
+            $(this).css("background-color=red");
+
+            $(this).text("box234").hide(900);
+            console.log('box-1 on click');
+           
+        });
+
+        $('.btn').dblclick(function () {
+            $(this).css("background-image", "linear-gradient(#e66465, #9198e5)");
+            console.log('btn-1 on click');
+            $(this).text("button 2");
+        });
+
+        $('.btn').mouseenter(function () {
+            $(this).css("background-image", "linear-gradient(#e66465, #9198e5)");
+            console.log('btn-1 on click');
+            $(this).text("button 3")
+
+        });
+
+        $('.btn').mouseleave(function () {
+            $(this).css("background-image", "linear-gradient(#e66465, #9198e5)");
+            console.log('btn-1 on click');
+            $(this).text("button 4")
+        });
+
+        $(document).keypress(function () {
+            $('body').css("background-color","red");
+        });
+
+        $(document).keyup(function () {
+            $('body').css("background-color","blue");
+        });
+
+        $(document).keydown(function () {
+            $('body').css("background-color","yellow");
+        });
+    });
+})
+</script>
